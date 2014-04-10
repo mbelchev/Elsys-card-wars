@@ -27,3 +27,4 @@ int main(){
 	
 	return 0;
 }
+// Copyright © 2014 by Marian Belchev and Hristo Dachev. All Rights Reserved.
