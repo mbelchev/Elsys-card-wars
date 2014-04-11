@@ -24,11 +24,11 @@ int attack (card_t *attacker, card_t *defender){
 	attacker -> card_hp -= defender -> card_dmg;
 	defender -> card_hp -= attacker -> card_dmg;
 	
-	if (defender -> card_hp < 0 && attacker -> card_hp < 0)
+	if (defender -> card_hp <= 0 && attacker -> card_hp <= 0)
 		return 0;
-	if (defender -> card_hp < 0 && attacker -> card_hp > 0)
+	if (defender -> card_hp <= 0 && attacker -> card_hp > 0)
 		return 1;
-	if (defender -> card_hp > 0 && attacker -> card_hp < 0)
+	if (defender -> card_hp > 0 && attacker -> card_hp <= 0)
 		return 2;
 	if (defender -> card_hp > 0 && attacker -> card_hp > 0) /* БУнТАР  >>>> */ return 3;
 }
