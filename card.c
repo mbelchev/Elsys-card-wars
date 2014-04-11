@@ -37,7 +37,7 @@ int main(){
 	card_t attacker = {"Almighty PATKA", 4123, 12, 0};
 	card_t defender = {"Weak PATKA", 1, 12, 10};
 	
-	printf ("%d\n", attack(&attacker, &defender));    
+	//printf ("%d\n", attack(&attacker, &defender));    
 	
 	if (attack(&attacker, &defender) == 0) printf("Both cards die (happy) \n");
 	if (attack(&attacker, &defender) == 1) printf("Card: %s WON! GG WP \n", attacker.card_name);
