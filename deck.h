@@ -1,17 +1,17 @@
 #ifndef DECK_H
-#define DECK_H
-#include "card.h"
 
-struct deck_t
-{
-	card_t array[30];
-	int top;
-};
+	#define DECK_H
+	#define DECK_SIZE 30
+	#include "card.h"
+
+	typedef struct {
+		card_t deck[DECK_SIZE];
+		int top;
+	} deck_t;
 
 
-int push_card(card_t card_to_push, struct deck_t *player_deck);
-void draw_card(struct deck_t *player_deck);
-void look_card(struct deck_t player_deck);
-
+	int push_card(card_t card_to_push, deck_t *player_deck);
+	void draw_card(deck_t *player_deck, card_t *card);
+	void look_card(deck_t *player_deck, card_t *card);
 
 #endif
