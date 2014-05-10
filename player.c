@@ -58,10 +58,11 @@ void turn_begin(player_t *player){
 
 }
 
+/*
 int main(){
 	//player_t example_player = {{HERE_DECK_T_PAR}, {HERE_CARD_T_PAR}, {MAX_MANA,CURRENT_MANA}, HEALTH};
 	card_t example_card = {"Almighty", 10, 10, 10};
 	player_t example_player = {{example_card, 0}, example_card, {0, 30}, 30};
 	//change_hp(&example_player, 10, 0);
 	play_card_from_hand(&example_player, example_card);
-}
+}*/
