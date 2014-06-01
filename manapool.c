@@ -16,21 +16,3 @@ void add_mana (manapool_t *pool, int mana_to_add){
 void remove_mana (manapool_t *pool, int mana_to_remove){
 	pool->current_mana -= mana_to_remove;
 }
-
-int main(){
-	card_t attacker = {"Almighty PATKA", 4123, 12, 12};
-	manapool_t pool = {1, 1};
-
-	can_put_card(attacker, pool);
-
-	/*
-		TESTING add & remove mana
-
-		add_mana(&pool, 5);
-		remove_mana(&pool, 2);
-
-		printf("%d\n", pool.current_mana);
-
-	*/
-	return 0;
-}

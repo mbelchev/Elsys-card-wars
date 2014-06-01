@@ -1,8 +1,8 @@
 #ifndef MANAPOOL_H
 
 	#define MANAPOOL_H
-	#include "card.h"
-	
+	#include "deck.h"
+
 	typedef struct {
 		int max_mana;
 		int current_mana;

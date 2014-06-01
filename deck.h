@@ -9,9 +9,9 @@
 		int top;
 	} deck_t;
 
-
+        int init_deck(deck_t *player_deck);
 	int push_card(card_t card_to_push, deck_t *player_deck);
-	void draw_card(deck_t *player_deck, card_t *card);
+	void draw_card(deck_t *player_deck);
 	void look_card(deck_t *player_deck, card_t *card);
 
 #endif
