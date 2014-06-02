@@ -5,30 +5,35 @@
 int main (){
 	time_t t;
 	int i, dmg, hp, mana, hp_max, mana_max;
-	FILE *fp;
-	fp = fopen("cards.csv", "w");
+	char name[10];
+	FILE *wf;
+	FILE *rf;
+	wf = fopen("cards.csv", "w");
+	rf = fopen("names.txt", "r");
 	srand((unsigned) time(&t));
-	for (i = 1; i <= 30; ++i)
-	{
+	for (i = 1; i <= 30; ++i) {
 		dmg = rand() % 9 +1;
-		
-		hp_max = dmg * 2 -1;
-		if(hp_max > 12){
+
+		hp_max = dmg * 2;
+		if(hp_max >= 12){
 			hp_max = 11;
 		}
-		hp = rand() & hp_max + 1;
+		hp = rand() & hp_max;
+		hp+=1;
 
-		mana_max = dmg + hp -1;
-		if(mana_max > 10){
+		mana_max = (dmg + hp)/2;
+		mana_max+=1;
+		if(mana_max >= 10){
 			mana_max = 9;
 		}
-		mana = rand() % mana_max +1;
-
-		fprintf(fp, "NAME%d,%d,%d,%d\n", i, dmg, hp, mana);
+		mana = rand() % mana_max;
+		mana+=1;
+		fscanf(rf, "%s\n", name);
+		fprintf(wf, "%s,%d,%d,%d\n", name, dmg, hp, mana);
 	}
    
 
-
-   fclose(fp);
-	return 0;
+	fclose(rf);
+   	fclose(wf);
+return 0;
 }
