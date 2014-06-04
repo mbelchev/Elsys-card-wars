@@ -1,7 +1,7 @@
 #ifndef DECK_H
 
 	#define DECK_H
-	#define DECK_SIZE 3000
+	#define DECK_SIZE 30
 	#include "card.h"
 
         
@@ -9,8 +9,6 @@
 		card_t deck[DECK_SIZE];
 		int top;
 	} deck_t;
-        
-       
 
         int init_deck(deck_t *player_deck);
 	int push_card(card_t card_to_push, deck_t *player_deck);

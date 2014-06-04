@@ -1,12 +1,13 @@
 #ifndef PLAYER_H
 	
 	#define PLAYER_H
+        #define HAND_SIZE 5
 	#include "manapool.h"
 
 	typedef struct {
                 char *player_name;
 		deck_t player_deck;
-		card_t player_card;
+		card_t player_hand[HAND_SIZE];
 		manapool_t player_manapool;
 		int player_health;
 	} player_t;

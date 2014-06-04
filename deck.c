@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "deck.h"
+#include "player.h"
 
 int init_deck(deck_t *player_deck){
     player_deck->top = -1;
@@ -32,5 +33,15 @@ void print_deck(deck_t *player_deck){
                                       player_deck->deck[i].card_dmg,
                                       player_deck->deck[i].card_hp,
                                       player_deck->deck[i].card_mana);
+    }
+}
+
+void print_hand(player_t player){
+    int i;
+    for (i = 0; i <= 4; i++){
+        printf("%s(%d,%d,%d) |", player.player_hand[i].card_name, 
+                                 player.player_hand[i].card_dmg,
+                                 player.player_hand[i].card_hp,
+                                 player.player_hand[i].card_mana);
     }
 }

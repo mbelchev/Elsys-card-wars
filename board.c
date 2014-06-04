@@ -31,9 +31,7 @@ void print_board(board_t *board1, player_t player1, board_t *board2, player_t pl
     printf("%s(HP: %d), Mana: %d \n", player1.player_name, player1.player_health, player1.player_manapool.current_mana);
     printf("_________________________________________________________________________________ \n| ");
     int i;
-    for (i = 1; i <= 5; i++){
-        draw_card(&player1.player_deck);
-    }
+    print_hand(player1);
     printf("\n¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\n");
         for (i = 1; i <= 5; i++){
             if (check_card(board1->lanes[1][i]) == 0){
@@ -51,9 +49,7 @@ void print_board(board_t *board1, player_t player1, board_t *board2, player_t pl
             }
         }
     printf("#\n_________________________________________________________________________________ \n| ");
-    for (i = 1; i <= 5; i++){
-        draw_card(&player2.player_deck);
-    }
+    print_hand(player2);
     printf("\n¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\n");
     printf("%s(HP: %d), Mana: %d \n", player2.player_name, player2.player_health, player2.player_manapool.current_mana);
 }
