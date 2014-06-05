@@ -70,7 +70,7 @@ int main() {
     
 
     //MAIN MENU:
-    printf("\x1b[32m ELSYS CARD WARS v2.0 beta by Marian Belchev and Hristo Dachev \x1b[0m \n\n");
+    printf("\x1b[32m ELSYS CARD WARS v2.0 beta by Marian Belchev, Hristo Dachev and Harry \x1b[0m \n\n");
     main_menu:
     printf("Choose option:\n");
     printf(" 1. Start game\n 2. Generate deck\n 3. Sort deck\n 4. Exit\n");
