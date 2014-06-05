@@ -8,9 +8,6 @@ void swap(card_t *card1, card_t *card2){
 }
 
 void sort(player_t *player, int sort_by){
-    printf("asd\n");
-    printf("%d\n", player->player_deck.top);
-    
     int i, k, top = player->player_deck.top + 1;
     card_t sort_array[top];
     
@@ -30,6 +27,14 @@ void sort(player_t *player, int sort_by){
                     }
                 }
             }
+            FILE *fp1 = fopen("cards_dmg.csv", "w+");
+            for (i = 0; i < top; i ++){
+                fprintf(fp1, "%s,%d,%d,%d\n", sort_array[i].card_name, 
+                                     sort_array[i].card_dmg, 
+                                     sort_array[i].card_hp,
+                                     sort_array[i].card_mana);
+            }
+            fclose(fp1);
             break;
         //sorting by hp
         case 2: 
@@ -40,6 +45,14 @@ void sort(player_t *player, int sort_by){
                     }
                 }
             }
+            FILE *fp2 = fopen("cards_hp.csv", "w+");
+            for (i = 0; i < top; i ++){
+                fprintf(fp2, "%s,%d,%d,%d\n", sort_array[i].card_name, 
+                                     sort_array[i].card_dmg, 
+                                     sort_array[i].card_hp,
+                                     sort_array[i].card_mana);
+            }
+            fclose(fp2);
             break;
         //sorting by mana;
         case 3:
@@ -50,15 +63,15 @@ void sort(player_t *player, int sort_by){
                     }
                 }
             }
-            break;
-        default: printf("Please choose correct option\n"); break;
-    }
-    FILE *fp = fopen("cards.csv", "w+");
-    for (i = 0; i < top; i ++){
-        fprintf(fp, "%s,%d,%d,%d\n", sort_array[i].card_name, 
+            FILE *fp3 = fopen("cards_mana.csv", "w+");
+            for (i = 0; i < top; i ++){
+                fprintf(fp3, "%s,%d,%d,%d\n", sort_array[i].card_name, 
                                      sort_array[i].card_dmg, 
                                      sort_array[i].card_hp,
                                      sort_array[i].card_mana);
+            }
+            fclose(fp3);
+            break;
+        default: printf("Please choose correct option\n"); break;
     }
-    fclose(fp);
 }
