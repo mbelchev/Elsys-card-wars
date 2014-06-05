@@ -1,18 +1,27 @@
 #include <stdio.h>
 #include "card.h"
+#include "board.h"
 
-int attack (card_t *attacker, card_t *defender){
-	attacker -> card_hp -= defender -> card_dmg;
-	defender -> card_hp -= attacker -> card_dmg;
+void attack (card_t *card1, card_t *card2){
+    card1->card_hp -= card2->card_dmg;
+    card2->card_hp -= card1->card_dmg;
+}
 
-	if (defender -> card_hp <= 0 && attacker -> card_hp <= 0)
-		return 0;
-	if (defender -> card_hp <= 0 && attacker -> card_hp > 0)
-		return 1;
-	if (defender -> card_hp > 0 && attacker -> card_hp <= 0)
-		return 2;
-	if (defender -> card_hp > 0 && attacker -> card_hp > 0) 
-                return 3;
+void fight(board_t *board1, board_t *board2, player_t *player1,  player_t *player2){
+    int i;
+    for (i = 1; i <= 5; i++){
+        if(&board1->lanes[1][i].card_name != NULL && &board2->lanes[2][i].card_name != NULL){
+            attack (&board1->lanes[1][i], &board2->lanes[2][i]);            
+        }
+        
+        if(board1->lanes[1][i].card_name != NULL && board2->lanes[2][i].card_name == NULL){
+            change_hp(player2, board1->lanes[1][i].card_dmg);
+        }
+        
+        if(board1->lanes[1][i].card_name == NULL && board2->lanes[2][i].card_name != NULL){
+            change_hp(player1, board2->lanes[2][i].card_dmg);
+        }
+    }
 }
 
 int check_card(card_t *card){

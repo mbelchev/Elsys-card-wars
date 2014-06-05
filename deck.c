@@ -38,10 +38,12 @@ void print_deck(deck_t *player_deck){
 
 void print_hand(player_t player){
     int i;
-    for (i = 0; i <= 4; i++){
+    for (i = 0; i < 5; i++){
+        if (player.player_hand[i].card_dmg != 0){
         printf("%s(%d,%d,%d) |", player.player_hand[i].card_name, 
                                  player.player_hand[i].card_dmg,
                                  player.player_hand[i].card_hp,
                                  player.player_hand[i].card_mana);
+        }
     }
 }

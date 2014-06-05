@@ -7,7 +7,7 @@
     } board_t;
     
     void init_board(board_t *board);
-    void play_card(board_t *board, player_t *player, card_t card, int num_lane, int turn);
+    void play_card(board_t *board, player_t *player, card_t card, int num_lane, int player_id);
     void print_board(board_t *board1, player_t player1, board_t *board2, player_t player2);
+    void delete_from_hand(player_t *player, int a);
 #endif
-

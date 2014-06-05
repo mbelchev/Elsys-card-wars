@@ -4,6 +4,7 @@
 	#define DECK_SIZE 30
 	#include "card.h"
 
+
         
 	typedef struct {
 		card_t deck[DECK_SIZE];
